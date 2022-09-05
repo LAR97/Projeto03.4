@@ -1,0 +1,149 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+
+    --ff-body: 'Palanquin', sans-serif;
+    --ff-heading: 'Staatliches';
+
+    font-size: 62.5%;
+    --fs-body: 1.6rem;
+
+    --hue: 250;
+
+    --hd-primary: hsl(var(--hue), 17%, 62%);
+    --hd-secondary: hsl(var(--hue), 18%, 79%);
+    --hd-font-color: hsl(var(--hue), 0%, 100%);
+
+    --bg-primary: hsl(var(--hue), 100%, 97%);
+    --bg-secondary: hsl(var(--hue), 91%, 96%);
+    --bd-hd-font-color: hsl(var(--hue), 17%, 35%);
+    --bd-p-font-color: hsl(var(--hue), 84%, 12%);
+
+    --fs-heading: 4.0rem;
+    --fs-body-h: 2.0rem;
+    --fs-body-p: 1.2rem;
+}
+
+.page {
+    max-width: clamp(33rem, 30rem + 60vw, 117rem);
+    min-width: 40rem;
+    margin: 0 auto;
+}
+
+body {
+    background-color: var(--bg-primary);
+}
+
+img {
+    width: 100%;
+    height: auto;
+}
+
+header {
+    background-color: var(--hd-primary);
+    font-family: var(--ff-heading);
+    text-align: center;
+    padding: 3rem 0;
+}
+
+header img {
+    width: 13.7rem;
+    height: auto;
+    margin: 0rem 12rem 3rem;
+}
+
+header h1 {
+    background-color: var(--hd-secondary);
+    color: var(--hd-font-color);
+    padding: 0.4rem 8.5rem;
+    font-weight: 400;
+    font-size: var(--fs-heading);
+    height: 4.9rem;
+}
+
+main {
+    display: grid;
+    gap: 3.2rem;
+    padding: 1.4rem 3rem 6rem;
+}
+
+main p {
+    font-family: var(--ff-body);
+    font-size: var(--fs-body-p);
+    color: var(--bd-p-font-color);
+    
+    text-align: center;
+    font-weight: 400;
+    line-height: 1.5rem;
+    width: auto;
+    height: 7.5rem;
+
+}
+
+.card {
+    font-family: var(--ff-heading);
+    position: relative;
+}
+
+.card img {
+    grid-template-areas: "A BB""C DD";
+    filter: brightness(0.9) saturate(0.9) opacity(0.9);
+
+    animation: topdown 700ms 200ms backwards;
+
+    transition: all 200ms;
+}
+
+.card img:hover {
+    transform: scale(1.1);
+    filter: brightness(1) saturate(1) opacity(1);
+}
+
+.card h2 {
+    position: absolute;
+    top: 1.6rem;
+    right: 1.6rem;
+    height: 3.5rem;
+    width: fit-content;
+    
+    display: inline-flex;
+    align-items: center;
+
+    font-weight: 400;
+    font-size: var(--fs-body-h);
+
+    background-color: var(--bg-secondary);
+    border-radius: 2rem;
+
+    color: var(--bd-hd-font-color);
+
+    padding: 1px 2.4rem;
+
+    animation: downtop 700ms 350ms backwards;
+}
+
+@keyframes downtop {
+    0% {
+        transform: translateY(-15px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes topdown {
+    0% {
+        transform: translateY(15px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
